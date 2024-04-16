@@ -12,23 +12,39 @@ if (isset($email)) {
 
   var_dump($email);
 
-  // check if emails contains '@' and '.'
   var_dump(str_contains($email, '@'), str_contains($email, '.'));
 
-  if (str_contains($mail, '@') && str_contains($mail, '.')) {
+  $response = checkEmail($email);
 
-    $response =
-      [
-        'content' => 'Email is valid'
-      ];
-  } else {
+  $message = generateAlertMessage($response);
 
-    $response =
-      [
-        'content' => 'Email must contain @ and .'
-      ];
-  }
+  var_dump($message);
 }
+
+function generateAlertMessage($response)
+{
+  if ($response) {
+    return  [
+      'status' => 'success',
+      'content' => 'Email is valid'
+    ];
+  }
+  return [
+    'status' => 'danger',
+    'content' => 'Email must contain @ and .'
+  ];
+}
+
+// check if emails contains '@' and '.'
+function checkEmail($mail)
+{
+
+  if (str_contains($mail, '@') && str_contains($mail, '.')) {
+    return true;
+  }
+  return false;
+}
+
 
 var_dump($response);
 
@@ -94,6 +110,15 @@ var_dump($response);
   </header>
 
   <main>
+
+    <?php if (isset($message)) : ?>
+
+      <div class="alert alert-<?php echo $message['status']; ?> position-fixed alert-dismissable fade show" role="alert" style="top:90%; left:2rem; z-index:1;">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong><?php echo $message['content']; ?></strong>
+      </div>
+
+    <?php endif; ?>
 
     <!-- Newsletter -->
     <div class="newsletter bg-light">
