@@ -10,15 +10,15 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page">Home
+              <a class="nav-link active" href="./index.php" aria-current="page">Home
                 <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page">About
+              <a class="nav-link active" href="./about.php" aria-current="page">About
                 <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page">Contacts
+              <a class="nav-link active" href="./contacts.php" aria-current="page">Contacts
                 <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item dropdown">

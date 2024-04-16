@@ -18,7 +18,7 @@ include_once __DIR__ . '/layouts/head.php';
       <p style="font-size: 4rem;"> <strong>Thanks for submitting!</strong></p>
       <p style="font-size: 1.5rem;">You wil now receive our newsletter</p>
 
-      <a class=" btn btn-primary" href="index.php" role="button"> Return to homepage</a>
+      <a class=" btn btn-dark" href="index.php" role="button"> Return to homepage</a>
 
     </div>
 

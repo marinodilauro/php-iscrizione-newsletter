@@ -28,7 +28,7 @@ include_once __DIR__ . '/layouts/head.php';
 <main>
 
   <!-- Jumbotron -->
-  <div class="p-5 mb-4 bg-light rounded-3">
+  <div class="p-5 mb-4 bg-light">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">Jumbotron</h1>
       <p class="col-md-8 fs-4">
@@ -36,7 +36,7 @@ include_once __DIR__ . '/layouts/head.php';
         like the one in previous versions of Bootstrap. Check out the
         examples below for how you can remix and restyle it to your liking.
       </p>
-      <button class="btn btn-primary btn-lg" type="button">
+      <button class="btn btn-dark btn-lg" type="button">
         Example button
       </button>
     </div>
@@ -121,7 +121,7 @@ include_once __DIR__ . '/layouts/head.php';
                 </div>
 
 
-                <button type="submit" class="btn btn-primary rounded mb-3">Submit</button>
+                <button type="submit" class="btn btn-dark rounded mb-3">Submit</button>
 
                 <?php if (isset($message)) : ?>
 
