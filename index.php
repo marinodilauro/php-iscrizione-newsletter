@@ -1,5 +1,36 @@
 <?php
 
+var_dump($_GET);
+
+
+$email = $_GET['email'];
+
+
+var_dump(isset($email));
+
+if (isset($email)) {
+
+  var_dump($email);
+
+  // check if emails contains '@' and '.'
+  var_dump(str_contains($email, '@'), str_contains($email, '.'));
+
+  if (str_contains($mail, '@') && str_contains($mail, '.')) {
+
+    $response =
+      [
+        'content' => 'Email is valid'
+      ];
+  } else {
+
+    $response =
+      [
+        'content' => 'Email must contain @ and .'
+      ];
+  }
+}
+
+var_dump($response);
 
 ?>
 
@@ -63,6 +94,7 @@
   </header>
 
   <main>
+
     <!-- Newsletter -->
     <div class="newsletter bg-light">
 
@@ -81,7 +113,7 @@
 
               <li class="lh-lg mb-4">
 
-                <form action="server.php" method="get">
+                <form action="" method="get">
 
                   <div class="mb-3">
                     <label for="" class="form-label">Subscribe to our newsletter</label>
