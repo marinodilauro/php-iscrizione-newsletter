@@ -62,7 +62,49 @@
 
   </header>
 
+  <main>
+    <!-- Newsletter -->
+    <div class="newsletter bg-light">
 
+      <div class="container py-4">
+        <div class="row">
+
+          <div class="col-6">
+            <h2>Newsletter</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere commodi, eveniet, ipsum assumenda ullam minima quis soluta numquam maiores saepe quae nemo? Ex temporibus consequatur, veniam sit reiciendis perspiciatis reprehenderit.</p>
+
+          </div>
+
+          <div class="col-4 mx-auto">
+
+            <ul class="list-unstyled m-0">
+
+              <li class="lh-lg mb-4">
+
+                <form action="server.php" method="get">
+
+                  <div class="mb-3">
+                    <label for="" class="form-label">Subscribe to our newsletter</label>
+                    <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelper" placeholder="mario.rossi@example.com" />
+                    <small id="emailHelper" class="form-text text-muted">Type your email address</small>
+                  </div>
+
+
+                  <button type="submit" class="btn btn-primary rounded">Submit</button>
+
+                </form>
+
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
 
 </body>
 
