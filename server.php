@@ -30,10 +30,7 @@ if (isset($email)) {
 
   // $_SESSION['message'] = $message;
 
-
-
   // var_dump($_SESSION);
-
 
   if ($response == true) {
     header('Location: ./subscribed.php');

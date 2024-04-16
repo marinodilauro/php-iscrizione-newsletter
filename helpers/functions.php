@@ -11,11 +11,13 @@ function generateAlertMessage($response)
   if ($response) {
     return  [
       'status' => 'success',
+      'email' => $_GET['email'],
       'content' => 'Email is valid'
     ];
   }
   return [
     'status' => 'danger',
+    'email' => $_GET['email'],
     'content' => 'Email must contain @ and .'
   ];
 }

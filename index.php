@@ -116,7 +116,7 @@ include_once __DIR__ . '/layouts/head.php';
 
                 <div class="mb-3">
                   <label for="" class="form-label">Subscribe to our newsletter</label>
-                  <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelper" placeholder="mario.rossi@example.com" />
+                  <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelper" placeholder="mario.rossi@example.com" value="<?php echo $message['email']; ?>" />
                   <small id="emailHelper" class="form-text text-muted">Type your email address</small>
                 </div>
 
