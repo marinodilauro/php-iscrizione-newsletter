@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/helpers/functions.php';
 
 var_dump($_GET);
 
@@ -20,31 +21,6 @@ if (isset($email)) {
 
   var_dump($message);
 }
-
-function generateAlertMessage($response)
-{
-  if ($response) {
-    return  [
-      'status' => 'success',
-      'content' => 'Email is valid'
-    ];
-  }
-  return [
-    'status' => 'danger',
-    'content' => 'Email must contain @ and .'
-  ];
-}
-
-// check if emails contains '@' and '.'
-function checkEmail($mail)
-{
-
-  if (str_contains($mail, '@') && str_contains($mail, '.')) {
-    return true;
-  }
-  return false;
-}
-
 
 var_dump($response);
 
