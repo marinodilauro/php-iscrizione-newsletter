@@ -1,28 +1,27 @@
 <?php
-require_once __DIR__ . '/helpers/functions.php';
+require_once __DIR__ . '/server.php';
 
-var_dump($_GET);
+// var_dump($message);
+// var_dump($response);
+// var_dump($email);
 
 
-$email = $_GET['email'];
+// var_dump($_SESSION);
+
+// var_dump(!empty($_GET['email']));
+// var_dump(!empty($_SESSION['message']));
 
 
-var_dump(isset($email));
 
-if (isset($email)) {
+session_start();
 
-  var_dump($email);
-
-  var_dump(str_contains($email, '@'), str_contains($email, '.'));
-
-  $response = checkEmail($email);
-
-  $message = generateAlertMessage($response);
-
-  var_dump($message);
+if (!empty($_SESSION['message'])) {
+  $message = $_SESSION['message'];
 }
 
-var_dump($response);
+session_unset();
+session_destroy();
+
 
 ?>
 
@@ -45,6 +44,7 @@ var_dump($response);
 
 <body>
 
+  <!-- Header -->
   <header>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -89,16 +89,6 @@ var_dump($response);
   </header>
 
   <main>
-
-    <?php if (isset($message)) : ?>
-
-      <div class="alert alert-<?php echo $message['status']; ?> position-fixed alert-dismissable fade show" role="alert" style="top:90%; left:2rem; z-index:1;">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <strong><?php echo $message['content']; ?></strong>
-      </div>
-
-    <?php endif; ?>
-
 
     <!-- Jumbotron -->
     <div class="p-5 mb-4 bg-light rounded-3">
@@ -167,7 +157,7 @@ var_dump($response);
     </section>
 
     <!-- Newsletter -->
-    <div class="newsletter bg-light">
+    <div id="newsletter" class="newsletter bg-light">
 
       <div class="container py-4">
         <div class="row">
@@ -184,7 +174,8 @@ var_dump($response);
 
               <li class="lh-lg mb-4">
 
-                <form action="" method="get">
+                <!-- Newsletter form -->
+                <form action="server.php" method="get">
 
                   <div class="mb-3">
                     <label for="" class="form-label">Subscribe to our newsletter</label>
@@ -193,7 +184,16 @@ var_dump($response);
                   </div>
 
 
-                  <button type="submit" class="btn btn-primary rounded">Submit</button>
+                  <button type="submit" class="btn btn-primary rounded mb-3">Submit</button>
+
+                  <?php if (isset($message)) : ?>
+
+                    <div class="alert alert-<?php echo $message['status']; ?> alert-dismissable fade show" role="alert">
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      <strong><?php echo $message['content']; ?></strong>
+                    </div>
+
+                  <?php endif; ?>
 
                 </form>
 
@@ -209,6 +209,7 @@ var_dump($response);
     </div>
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="bg-dark py-5">
 
     <div class="container">
@@ -303,6 +304,12 @@ var_dump($response);
 
 
   </footer>
+
+
+  <!-- Bootstrap JS link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+
+  </script>
 
 </body>
 

@@ -6,18 +6,18 @@
  * @param string $response A true/false value.
  * @return array
  */
-function generateAlertMessage($response) {
-    if($response) {
-     return  [
+function generateAlertMessage($response)
+{
+  if ($response) {
+    return  [
       'status' => 'success',
       'content' => 'Email is valid'
     ];
-    } 
-     return [
-      'status' => 'danger',
-      'content' => 'Email must contain @ and .'
-    ];
-
+  }
+  return [
+    'status' => 'danger',
+    'content' => 'Email must contain @ and .'
+  ];
 }
 
 /**
@@ -25,13 +25,11 @@ function generateAlertMessage($response) {
  * @param string $mail The email to check.
  * @return boolean
  */
-function checkEmail($mail) {
+function checkEmail($mail)
+{
 
-  if(str_contains($mail, '@') && str_contains($mail, '.')) {
+  if (str_contains($mail, '@') && str_contains($mail, '.')) {
     return true;
-  } 
+  }
   return false;
-
 }
-
-?>
